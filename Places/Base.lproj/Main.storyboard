@@ -173,10 +173,10 @@
             </objects>
             <point key="canvasLocation" x="1159" y="188"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Map-->
         <scene sceneID="CBL-RV-obt">
             <objects>
-                <navigationController id="07V-zN-YuC" sceneMemberID="viewController">
+                <navigationController title="Map" id="07V-zN-YuC" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="50s-ym-aCJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
