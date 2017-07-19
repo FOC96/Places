@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BC1973C01F1F1ABC00125F04 /* MyPlaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPlaces.swift; sourceTree = "<group>"; };
+		BC1973C01F1F1ABC00125F04 /* MyPlaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyPlaces.swift; path = ../MyPlaces.swift; sourceTree = "<group>"; };
 		BCB71F601F1EBC9300039F83 /* Places.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Places.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB71F631F1EBC9300039F83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCB71F651F1EBC9300039F83 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,7 +43,6 @@
 		BCB71F571F1EBC9300039F83 = {
 			isa = PBXGroup;
 			children = (
-				BC1973C01F1F1ABC00125F04 /* MyPlaces.swift */,
 				BCB71F621F1EBC9300039F83 /* Places */,
 				BCB71F611F1EBC9300039F83 /* Products */,
 				BCC1A94F1F1EC09B00A7470F /* Frameworks */,
@@ -61,6 +60,7 @@
 		BCB71F621F1EBC9300039F83 /* Places */ = {
 			isa = PBXGroup;
 			children = (
+				BC1973C01F1F1ABC00125F04 /* MyPlaces.swift */,
 				BCB71F631F1EBC9300039F83 /* AppDelegate.swift */,
 				BCB71F651F1EBC9300039F83 /* ViewController.swift */,
 				BCB71F671F1EBC9300039F83 /* Main.storyboard */,
