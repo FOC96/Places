@@ -39,14 +39,28 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         manager.requestWhenInUseAuthorization()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+        UIApplication.shared.statusBarStyle = .lightContent
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
+    }
     
     func design() {
+        self.navigationController?.navigationBar.isHidden = true
+        
         saveButton.layer.shadowColor = UIColor.black.cgColor
         saveButton.layer.cornerRadius = 8
         saveButton.layer.shadowOffset = CGSize.zero
@@ -102,11 +116,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         self.mainMap.setRegion(region, animated: true)
     }
     
-    
-    // Statusbar color
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
     
     
     // Checks past setups by user
@@ -168,6 +177,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     }
     
     
+    @IBAction func showTaa() {
+//        performSegue(withIdentifier: "Hola", sender: nil)
+    }
     
     
     
