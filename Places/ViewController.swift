@@ -24,8 +24,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     
     
     //Colors
-    let mainColor = UIColor(red:0.105882, green:0.466667, blue:0.858824, alpha:1.0).cgColor
-    let secondColor = UIColor(red:0.231373, green:0.490196, blue:0.772549, alpha:1.0).cgColor
+    let mainColor = UIColor(red:0.000000, green:0.796078, blue:0.756863, alpha:1.0).cgColor
+    let secondColor = UIColor(red:0.043137, green:0.701961, blue:0.886275, alpha:1.0).cgColor
     
     
     
@@ -70,8 +70,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         
         locationLabel.layer.shadowColor = UIColor.black.cgColor
         locationLabel.layer.shadowOffset = CGSize.zero
-        locationLabel.layer.shadowOpacity = 0.8
-        locationLabel.layer.shadowRadius = 4
+        locationLabel.layer.shadowOpacity = 0.9
+        locationLabel.layer.shadowRadius = 6
         
         catalogButton.layer.shadowColor = UIColor.black.cgColor
         catalogButton.layer.cornerRadius = 8
@@ -93,8 +93,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     // User location (system func)
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = CLLocationCoordinate2D(latitude: locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude)
-        let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
+        let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
         let region = MKCoordinateRegion(center: location, span: span)
+        
+        self.mainMap.isZoomEnabled = true
+//        self.mainMap.setCenter(location, animated: true)
         
         self.mainMap.setRegion(region, animated: true)
     }
