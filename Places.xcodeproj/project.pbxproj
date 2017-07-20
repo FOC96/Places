@@ -14,6 +14,7 @@
 		BCB71F6B1F1EBC9300039F83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCB71F6A1F1EBC9300039F83 /* Assets.xcassets */; };
 		BCB71F6E1F1EBC9300039F83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCB71F6C1F1EBC9300039F83 /* LaunchScreen.storyboard */; };
 		BCC1A9511F1EC09B00A7470F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC1A9501F1EC09B00A7470F /* CoreLocation.framework */; };
+		BCF889FB1F21075C004D62DB /* placeDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF889FA1F21075C004D62DB /* placeDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		BCB71F6D1F1EBC9300039F83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BCB71F6F1F1EBC9300039F83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCC1A9501F1EC09B00A7470F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		BCF889FA1F21075C004D62DB /* placeDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = placeDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +45,7 @@
 		BCB71F571F1EBC9300039F83 = {
 			isa = PBXGroup;
 			children = (
+				BCF889FA1F21075C004D62DB /* placeDetails.swift */,
 				BCB71F621F1EBC9300039F83 /* Places */,
 				BCB71F611F1EBC9300039F83 /* Products */,
 				BCC1A94F1F1EC09B00A7470F /* Frameworks */,
@@ -152,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCF889FB1F21075C004D62DB /* placeDetails.swift in Sources */,
 				BCB71F661F1EBC9300039F83 /* ViewController.swift in Sources */,
 				BC1973C11F1F1ABC00125F04 /* MyPlaces.swift in Sources */,
 				BCB71F641F1EBC9300039F83 /* AppDelegate.swift in Sources */,

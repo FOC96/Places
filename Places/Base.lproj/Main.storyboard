@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Map-->
+        <!--Map2-->
         <scene sceneID="rSq-4D-fL8">
             <objects>
-                <viewController storyboardIdentifier="mainMapView" title="Map" id="t5a-hm-wJw" customClass="ViewController" customModule="Places" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainMapView" title="Map2" id="t5a-hm-wJw" customClass="ViewController" customModule="Places" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JYG-kc-tWf"/>
                         <viewControllerLayoutGuide type="bottom" id="WM8-TY-uGD"/>
@@ -163,6 +163,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="6c3-TL-hUq" kind="show" identifier="toDetail" id="dbf-tJ-JNG"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -170,15 +173,67 @@
                             <outlet property="delegate" destination="dug-R5-xhX" id="oXC-6a-QSy"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My Places" id="EDL-YB-Lz2">
-                        <barButtonItem key="backBarButtonItem" title="Map" id="qbU-21-gW6"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="My Places" id="EDL-YB-Lz2"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="placesTable" destination="26A-d3-iHO" id="2lR-n2-GZ7"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d0h-qJ-8ck" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1159" y="188"/>
+        </scene>
+        <!--Details-->
+        <scene sceneID="TjD-J0-slg">
+            <objects>
+                <viewController storyboardIdentifier="detailsViewController" title="Details" id="6c3-TL-hUq" customClass="placeDetails" customModule="Places" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9dh-MY-Hbl"/>
+                        <viewControllerLayoutGuide type="bottom" id="wNy-VP-6Ug"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dyW-RW-QM5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bNP-Tg-D0t">
+                                <rect key="frame" x="16" y="74" width="343" height="161"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="161" id="hKo-9I-apJ"/>
+                                </constraints>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kfd-za-hNG">
+                                <rect key="frame" x="130" y="601" width="115" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Delete this place">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgQ-BL-aLv">
+                                <rect key="frame" x="16" y="257" width="343" height="27"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bNP-Tg-D0t" firstAttribute="trailing" secondItem="dyW-RW-QM5" secondAttribute="trailingMargin" id="F0g-HP-p0V"/>
+                            <constraint firstItem="dgQ-BL-aLv" firstAttribute="trailing" secondItem="dyW-RW-QM5" secondAttribute="trailingMargin" id="FBA-nv-o0h"/>
+                            <constraint firstItem="dgQ-BL-aLv" firstAttribute="leading" secondItem="dyW-RW-QM5" secondAttribute="leadingMargin" id="JYQ-rN-Pj4"/>
+                            <constraint firstItem="bNP-Tg-D0t" firstAttribute="leading" secondItem="dyW-RW-QM5" secondAttribute="leadingMargin" id="SAw-ja-UmW"/>
+                            <constraint firstItem="dgQ-BL-aLv" firstAttribute="top" secondItem="bNP-Tg-D0t" secondAttribute="bottom" constant="22" id="oJq-U3-ygG"/>
+                            <constraint firstItem="bNP-Tg-D0t" firstAttribute="top" secondItem="9dh-MY-Hbl" secondAttribute="bottom" constant="10" id="yc1-AH-DHK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="detailMap" destination="bNP-Tg-D0t" id="iXi-pS-jou"/>
+                        <outlet property="titleLabel" destination="dgQ-BL-aLv" id="wHG-AL-FPZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dPI-1K-zaK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2013.5999999999999" y="187.55622188905548"/>
         </scene>
         <!--Map-->
         <scene sceneID="CBL-RV-obt">

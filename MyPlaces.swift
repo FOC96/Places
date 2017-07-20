@@ -8,12 +8,21 @@
 
 import UIKit
 
+var myPlaces = [Dictionary<String, String>()]
+var activePlace = -1
+
+
 class MyPlaces: UITableViewController {
 
+    @IBOutlet var placesTable: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         design()
+        
+        //checkCapabilities()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -27,6 +36,19 @@ class MyPlaces: UITableViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         design()
+        
+        if let tempPlaces = UserDefaults.standard.object(forKey: "myPlaces") as? [Dictionary<String, String>] {
+            myPlaces = tempPlaces
+        }
+        
+        if myPlaces.count == 1 && myPlaces[0].count == 0 {
+            myPlaces.remove(at: 0)
+            myPlaces.append(["name":"Best city ever", "lat":"20.9144", "lon":"-100.7438"])
+            UserDefaults.standard.set(myPlaces, forKey: "myPlaces")
+        }
+        
+        activePlace = -1
+        placesTable.reloadData()
     }
     
     override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
@@ -42,24 +64,30 @@ class MyPlaces: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return myPlaces.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
+        
+        if myPlaces[indexPath.row]["name"] != nil {
+            cell.textLabel?.text = myPlaces[indexPath.row]["name"]
+        }
+        
         return cell
     }
-    */
 
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        activePlace = indexPath.row
+        performSegue(withIdentifier: "toDetail", sender: nil)
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -109,5 +137,30 @@ class MyPlaces: UITableViewController {
         self.navigationController?.navigationBar.isHidden = false
         self.navigationController?.navigationBar.tintColor = secondColor
     }
+    
+    //Not working, probably because this is a UITableViewController subclass. I think a subclass of UIViewController is required.
+//    func checkCapabilities() {
+//        //3D Touch
+//        if traitCollection.forceTouchCapability == UIForceTouchCapability.available {
+//            registerForPreviewing(with: self, sourceView: view)
+//            print("3D Touch available")
+//        } else {
+//            print("3D Touch unavailable")
+//        }
+//    }
 
+}
+
+extension ViewController: UIViewControllerPreviewingDelegate {
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        let peekView = storyboard?.instantiateViewController(withIdentifier: "detailsViewController")
+        return peekView
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        let popView = storyboard?.instantiateViewController(withIdentifier: "detailsViewController")
+        show(popView!, sender: self)
+    }
+    
 }

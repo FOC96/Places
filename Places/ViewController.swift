@@ -142,7 +142,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
                     }
                     
                     self.locationLabel.text = address
-                    print(address)
                 }
             }// Info gotten from reverseGeoLocation
         }// CLGeocoder ended
@@ -213,8 +212,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             self.present(alerta, animated: true, completion: nil)
         }
     }
-    
-    
     
     
 }
