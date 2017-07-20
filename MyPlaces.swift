@@ -13,8 +13,7 @@ class MyPlaces: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.isHidden = false
-
+        design()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -23,9 +22,17 @@ class MyPlaces: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = false
+        design()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        design()
+    }
+    
+    override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        design()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -97,5 +104,10 @@ class MyPlaces: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func design() {
+        self.navigationController?.navigationBar.isHidden = false
+        self.navigationController?.navigationBar.tintColor = secondColor
+    }
 
 }
