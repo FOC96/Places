@@ -27,7 +27,7 @@
 		BCB71F6D1F1EBC9300039F83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BCB71F6F1F1EBC9300039F83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCC1A9501F1EC09B00A7470F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		BCF889FA1F21075C004D62DB /* placeDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = placeDetails.swift; sourceTree = "<group>"; };
+		BCF889FA1F21075C004D62DB /* placeDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = placeDetails.swift; path = ../placeDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +45,6 @@
 		BCB71F571F1EBC9300039F83 = {
 			isa = PBXGroup;
 			children = (
-				BCF889FA1F21075C004D62DB /* placeDetails.swift */,
 				BCB71F621F1EBC9300039F83 /* Places */,
 				BCB71F611F1EBC9300039F83 /* Products */,
 				BCC1A94F1F1EC09B00A7470F /* Frameworks */,
@@ -63,6 +62,7 @@
 		BCB71F621F1EBC9300039F83 /* Places */ = {
 			isa = PBXGroup;
 			children = (
+				BCF889FA1F21075C004D62DB /* placeDetails.swift */,
 				BC1973C01F1F1ABC00125F04 /* MyPlaces.swift */,
 				BCB71F631F1EBC9300039F83 /* AppDelegate.swift */,
 				BCB71F651F1EBC9300039F83 /* ViewController.swift */,

@@ -39,5 +39,28 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>QACatalog</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>My catalog</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>Show my saved places</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>foc.personal.Places.showCatalog</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>QALocation</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>Save my location</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Save new</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>foc.personal.Places.savePlace</string>
+		</dict>
+	</array>
 </dict>
 </plist>

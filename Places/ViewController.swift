@@ -16,6 +16,11 @@ let secondColor = UIColor(red:0.043137, green:0.701961, blue:0.886275, alpha:1.0
 
 class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
     let manager = CLLocationManager()
     @IBOutlet weak var mainMap: MKMapView!
     @IBOutlet weak var saveButton: UIButton!

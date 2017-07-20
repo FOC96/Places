@@ -35,12 +35,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    
+    
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        // WTF: Navigation bar hides
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        var ui = UIViewController()
+        
+        if shortcutItem.type == "foc.personal.Places.showCatalog" {
+//            ui = storyboard.instantiateViewController(withIdentifier: "myPlaces")
+            completionHandler(true)
+        } else if shortcutItem.type == "foc.personal.Places.savePlace" {
+//            ui = storyboard.instantiateViewController(withIdentifier: "mainMapView")
+            completionHandler(true)
+        }
+        
+//        window!.rootViewController?.present(ui, animated: true, completion: nil)
+        
+    }
+    
 
 }
 

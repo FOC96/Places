@@ -27,7 +27,7 @@ class MyPlaces: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,8 +43,9 @@ class MyPlaces: UITableViewController {
         
         if myPlaces.count == 1 && myPlaces[0].count == 0 {
             myPlaces.remove(at: 0)
-            myPlaces.append(["name":"Best city ever", "lat":"20.9144", "lon":"-100.7438"])
+            myPlaces.append(["name":"Best city ever", "lat":"20.9144", "lon":"-100.7438", "date":"June 22, 2017", "notes":"San Miguel is–indeed–the best city in the whole world. I can't wait to come back!"])
             UserDefaults.standard.set(myPlaces, forKey: "myPlaces")
+            print(myPlaces)
         }
         
         activePlace = -1
