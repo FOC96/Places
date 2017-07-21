@@ -22,12 +22,6 @@ class placeDetails: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         showDetails()
-        design()
-}
-    
-    func design() {
-        detailMap.layer.cornerRadius = 8
-        detailMap.layer.masksToBounds = true
     }
     
     
