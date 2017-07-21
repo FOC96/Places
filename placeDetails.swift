@@ -12,10 +12,10 @@ import MapKit
 class placeDetails: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var detailMap: MKMapView!
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var titleLabel: UITextField!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var notesLabel: UILabel!
+    @IBOutlet weak var addressLabel: UITextView!
+    @IBOutlet weak var notesLabel: UITextView!
     
     
     
