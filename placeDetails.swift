@@ -22,8 +22,13 @@ class placeDetails: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         showDetails()
+        design()
 }
-
+    
+    func design() {
+        detailMap.layer.cornerRadius = 8
+        detailMap.layer.masksToBounds = true
+    }
     
     
     override func didReceiveMemoryWarning() {
@@ -120,6 +125,10 @@ class placeDetails: UIViewController, MKMapViewDelegate {
                                     }
                                     
                                     self.addressLabel.text = address
+                                    self.addressLabel.textColor = UIColor.black
+                                } else {
+                                    self.addressLabel.text = "No address information available"
+                                    self.addressLabel.textColor = UIColor.lightGray
                                 }
                             }// Info gotten from reverseGeoLocation
                         }// CLGeocoder ended

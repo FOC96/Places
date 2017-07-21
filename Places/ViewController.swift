@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 
+
 //Colors
 let mainColor = UIColor(red:0.000000, green:0.796078, blue:0.756863, alpha:1.0)
 let secondColor = UIColor(red:0.043137, green:0.701961, blue:0.886275, alpha:1.0)
@@ -16,6 +17,29 @@ let secondColor = UIColor(red:0.043137, green:0.701961, blue:0.886275, alpha:1.0
 
 class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
+    
+    func checkConnection() {
+        if Reachability.isInternetAvailable() != true {
+            let alertController = UIAlertController (title: "Turn Off Airplane Mode or Use Wi-Fi to Access Data", message: nil, preferredStyle: .alert)
+            
+            let settingsAction = UIAlertAction(title: "Settings", style: .default) { (_) -> Void in
+                guard let settingsUrl = URL(string: UIApplicationOpenSettingsURLString) else {
+                    return
+                }
+                
+                if UIApplication.shared.canOpenURL(settingsUrl) {
+                    UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                        // Nothing here
+                    })
+                }
+            }
+            alertController.addAction(settingsAction)
+            let cancelAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(cancelAction)
+            
+            present(alertController, animated: true, completion: nil)
+        }
+    }
     
     override func viewDidDisappear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
@@ -35,6 +59,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         super.viewDidLoad()
         design()
         checkPast()
+        checkConnection()
         
         //Tap on label
         let tapLocationName = UILongPressGestureRecognizer(target: self, action: #selector(ViewController.changeLocTitle(gestureRecognizer:)))
@@ -219,5 +244,5 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     }
     
     
+    
 }
-

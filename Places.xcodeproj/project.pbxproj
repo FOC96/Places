@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BC1973C11F1F1ABC00125F04 /* MyPlaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1973C01F1F1ABC00125F04 /* MyPlaces.swift */; };
+		BC5633D21F219F64006EE622 /* Magic.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5633D11F219F64006EE622 /* Magic.swift */; };
 		BCB71F641F1EBC9300039F83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB71F631F1EBC9300039F83 /* AppDelegate.swift */; };
 		BCB71F661F1EBC9300039F83 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB71F651F1EBC9300039F83 /* ViewController.swift */; };
 		BCB71F691F1EBC9300039F83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCB71F671F1EBC9300039F83 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		BC1973C01F1F1ABC00125F04 /* MyPlaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyPlaces.swift; path = ../MyPlaces.swift; sourceTree = "<group>"; };
+		BC5633D11F219F64006EE622 /* Magic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Magic.swift; sourceTree = "<group>"; };
 		BCB71F601F1EBC9300039F83 /* Places.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Places.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB71F631F1EBC9300039F83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCB71F651F1EBC9300039F83 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				BCB71F631F1EBC9300039F83 /* AppDelegate.swift */,
 				BCB71F651F1EBC9300039F83 /* ViewController.swift */,
 				BCB71F671F1EBC9300039F83 /* Main.storyboard */,
+				BC5633D11F219F64006EE622 /* Magic.swift */,
 				BCB71F6A1F1EBC9300039F83 /* Assets.xcassets */,
 				BCB71F6C1F1EBC9300039F83 /* LaunchScreen.storyboard */,
 				BCB71F6F1F1EBC9300039F83 /* Info.plist */,
@@ -158,6 +161,7 @@
 				BCF889FB1F21075C004D62DB /* placeDetails.swift in Sources */,
 				BCB71F661F1EBC9300039F83 /* ViewController.swift in Sources */,
 				BC1973C11F1F1ABC00125F04 /* MyPlaces.swift in Sources */,
+				BC5633D21F219F64006EE622 /* Magic.swift in Sources */,
 				BCB71F641F1EBC9300039F83 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
