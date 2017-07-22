@@ -54,6 +54,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var gradLayer: UIView!
     
+    var userLat = 0.0
+    var userLon = 0.0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -150,6 +153,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         let span = MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
         let region = MKCoordinateRegion(center: mylocation, span: span)
         
+        userLat = mylocation.latitude
+        userLon = mylocation.longitude
+        
         self.mainMap.isZoomEnabled = true
 //        self.mainMap.setCenter(location, animated: true)
         
@@ -242,6 +248,27 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             self.present(alerta, animated: true, completion: nil)
         }
     }
+    
+    
+    
+    @IBAction func saveButtonPushed(_ sender: Any) {
+        screenMode = 1
+        print(screenMode)
+        let date = Date()
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.year, .month, .day], from: date)
+        
+        let year =  components.year
+        let month = components.month
+        let day = components.day
+        
+        let today = "\(String(describing: month)) \(String(describing: day)), \(String(describing: year))"
+        
+        myPlaces.append(["name":"Unknown name", "lat":"\(userLat)", "lon":"\(userLon)", "date":"\(today)"])
+        activePlace = myPlaces.count - 1
+    }
+    
+    
     
     
     

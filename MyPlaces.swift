@@ -21,13 +21,22 @@ class MyPlaces: UITableViewController {
         
         design()
         
-        //checkCapabilities()
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        if let tempPlaces = UserDefaults.standard.object(forKey: "myPlaces") as? [Dictionary<String, String>] {
+            myPlaces = tempPlaces
+        }
+        
+        if myPlaces.count == 1 && myPlaces[0].count == 0 {
+            myPlaces.remove(at: 0)
+            myPlaces.append(["name":"Best city ever", "lat":"20.9144", "lon":"-100.7438", "date":"June 22, 2017", "notes":"San Miguel is–indeed–the best city in the whole world. I can't wait to come back!"])
+            UserDefaults.standard.set(myPlaces, forKey: "myPlaces")
+            print(myPlaces)
+        }
+        
+        activePlace = -1
+        placesTable.reloadData()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -86,6 +95,8 @@ class MyPlaces: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         activePlace = indexPath.row
+        screenMode = 0
+        print(screenMode)
         performSegue(withIdentifier: "toDetail", sender: nil)
     }
     
