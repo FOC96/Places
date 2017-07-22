@@ -80,9 +80,6 @@ class placeDetails: UIViewController, MKMapViewDelegate {
         if let notes = myPlaces[activePlace]["notes"] {
             notesLabel.text = notes
             notesLabel.textColor = UIColor.black
-        } else {
-            notesLabel.text = "There are currently no notes for this place."
-            notesLabel.textColor = UIColor.lightGray
         }
         
         
@@ -180,7 +177,8 @@ class placeDetails: UIViewController, MKMapViewDelegate {
         let deleteAlert = UIAlertController(title: "Delete Place", message: "Are you sure you want to proceed?", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Delete", style: .destructive) { (action) in
             //DELETE PLACE
-            //            myPlaces.remove(at: activePlace)
+            myPlaces.remove(at: activePlace)
+            UserDefaults.standard.set(myPlaces, forKey: "myPlaces")
             _ = self.navigationController?.popViewController(animated: true)
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
@@ -205,8 +203,11 @@ class placeDetails: UIViewController, MKMapViewDelegate {
         self.present(infoAlert, animated: true, completion: nil)
     }
     
+    
     func cancelSave() {
         let cancelAlert = UIAlertController(title: "Cancel", message: "Are you sure you want to proceed?", preferredStyle: .alert)
+        myPlaces.popLast()
+        UserDefaults.standard.set(myPlaces, forKey: "myPlaces")
         let okAction = UIAlertAction(title: "Continue", style: .destructive) { (action) in
             //CANCEL SAVING
             _ = self.navigationController?.popViewController(animated: true)

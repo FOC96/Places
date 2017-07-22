@@ -214,7 +214,7 @@
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" text="No address information available." translatesAutoresizingMaskIntoConstraints="NO" id="6Ur-DU-CSl">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ur-DU-CSl">
                                         <rect key="frame" x="20" y="401" width="335" height="38"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -227,21 +227,21 @@
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" text="There are no notes for this place saved yet." textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="A9i-Ny-YmY">
-                                        <rect key="frame" x="20" y="490" width="335" height="60"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="A9i-Ny-YmY">
+                                        <rect key="frame" x="20" y="490" width="335" height="38"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMU-yH-ZoV">
-                                        <rect key="frame" x="20" y="620" width="335" height="30"/>
+                                        <rect key="frame" x="20" y="598" width="335" height="30"/>
                                         <state key="normal" title="Edit Place"/>
                                         <connections>
                                             <action selector="bluePushed:" destination="6c3-TL-hUq" eventType="touchUpInside" id="Rpd-5l-kBd"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NxI-dy-QXk">
-                                        <rect key="frame" x="20" y="660" width="335" height="30"/>
+                                        <rect key="frame" x="20" y="638" width="335" height="30"/>
                                         <state key="normal" title="Delete Place">
                                             <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
