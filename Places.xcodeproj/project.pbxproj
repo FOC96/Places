@@ -119,6 +119,11 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = SUDH9226JF;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};

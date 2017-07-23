@@ -72,6 +72,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestWhenInUseAuthorization()
+        locateUser()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -197,8 +198,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
                 locationButton.setImage(#imageLiteral(resourceName: "locationOff"), for: .normal)
             }
         } else {
-            UserDefaults.standard.set(0, forKey: "locationStatus")
-            locationButton.setImage(#imageLiteral(resourceName: "locationOff"), for: .normal)
+            UserDefaults.standard.set(1, forKey: "locationStatus")
+            locationButton.setImage(#imageLiteral(resourceName: "locationOn"), for: .normal)
         }
     }
     

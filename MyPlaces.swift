@@ -21,7 +21,7 @@ class MyPlaces: UITableViewController {
         
         design()
         
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
+//        self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         if let tempPlaces = UserDefaults.standard.object(forKey: "myPlaces") as? [Dictionary<String, String>] {
             myPlaces = tempPlaces
@@ -38,6 +38,8 @@ class MyPlaces: UITableViewController {
         placesTable.reloadData()
 
     }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         design()

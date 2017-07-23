@@ -170,6 +170,12 @@ class placeDetails: UIViewController, MKMapViewDelegate {
             self.titleLabel.isUserInteractionEnabled = false
             self.editPlaceButton.setTitle("Edit Place", for: UIControlState.normal)
             editValue = 0
+            
+            var thisPlace = myPlaces[activePlace]
+            thisPlace["name"] = titleLabel.text
+            thisPlace["notes"] = notesLabel.text
+            myPlaces[activePlace] = thisPlace
+            UserDefaults.standard.set(myPlaces, forKey: "myPlaces")
         }
     }
     
