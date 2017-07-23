@@ -255,15 +255,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     @IBAction func saveButtonPushed(_ sender: Any) {
         screenMode = 1
         print(screenMode)
-        let date = Date()
-        let calendar = Calendar.current
-        let components = calendar.dateComponents([.year, .month, .day], from: date)
+        // get the current date and time
+        let currentDateTime = Date()
         
-        let year =  components.year
-        let month = components.month
-        let day = components.day
+        // initialize the date formatter and set the style
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
         
-        let today = "\(String(describing: month)) \(String(describing: day)), \(String(describing: year))"
+        // get the date time String from the date object
+        let today = formatter.string(from: currentDateTime) // October 8, 2016 at 10:48:53 PM
         
         myPlaces.append(["name":"Unknown name", "lat":"\(userLat)", "lon":"\(userLon)", "date":"\(today)"])
         activePlace = myPlaces.count - 1
